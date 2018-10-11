@@ -58,7 +58,7 @@ define(function () {
 			if (lastSerialPort) {
 				return new Promise(function(resolve, reject) {
 					dexcom.oldConnect(lastSerialPort, true).then(resolve, function() {
-						dexcom.scanForDexcom.then(resolve, reject);
+						dexcom.scanForDexcom().then(resolve, reject);
 					})
 				});
 			} else if (serialport) {
@@ -427,7 +427,7 @@ define(function () {
 			},
 			reader = function() {
 				compile(i).then(function() {
-					waiting.setProgress(i);
+					//waiting.setProgress(i);
 					i++;
 					reader();
 				}, function() { // no more data

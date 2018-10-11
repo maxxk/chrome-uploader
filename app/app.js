@@ -6,6 +6,7 @@ require(["feature/cgm_download", "feature/mongolab", "feature/trending_alerts", 
 var isWindows = !!~window.navigator.appVersion.indexOf("Win");
 var isMac = !!~window.navigator.appVersion.indexOf("Mac OS X");
 var macVersion;
+window.egvrecords = egvrecords;
 if (isMac) {
 	var identifier = "Mac OS X";
 	var ixVersion = window.navigator.appVersion.indexOf(identifier) + identifier.length;
